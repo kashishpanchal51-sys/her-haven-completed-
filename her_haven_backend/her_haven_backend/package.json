@@ -1,0 +1,19 @@
+{
+  "name": "her-haven-backend",
+  "version": "1.0.0",
+  "description": "Backend REST API for Her Haven Luxury Boutique & Salon - Auth, Products, & Cart Management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "her-haven",
+    "luxury",
+    "boutique",
+    "rest-api",
+    "backend"
+  ],
+  "author": "Google DeepMind Antigravity Team",
+  "license": "MIT"
+}

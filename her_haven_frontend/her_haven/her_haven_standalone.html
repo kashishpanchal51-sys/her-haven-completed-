@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Her Haven — Luxury Boutique & Salon</title>
+    <meta name="description" content="High-end Indian luxury fashion, fine fragrances, and handcrafted artisanal jewellery boutique with curated realms, olfactory architecture, bespoke bag, and personal sanctuary hub." />
+
+    <!-- Google Fonts: Playfair Display & Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+    <!-- Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS (CDN with Her Haven Theme Extensions) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#854e3a",
+                        "primary-container": "#a16551",
+                        "primary-fixed": "#ffdbcf",
+                        "primary-fixed-dim": "#feb59d",
+                        secondary: "#695c56",
+                        "secondary-container": "#eedcd4",
+                        "secondary-fixed": "#f1dfd7",
+                        "secondary-fixed-dim": "#d4c3bb",
+                        tertiary: "#854d3b",
+                        "tertiary-container": "#a26551",
+                        background: "#fff8f8",
+                        surface: "#fff8f8",
+                        "surface-dim": "#e1d8d9",
+                        "surface-container": "#f5eced",
+                        "surface-container-low": "#fbf1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#efe6e7",
+                        "surface-container-highest": "#e9e0e1",
+                        "on-surface": "#1e1b1c",
+                        "on-surface-variant": "#52443f",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#6d605a",
+                        outline: "#85736e",
+                        "outline-variant": "#d7c2bc",
+                    },
+                    fontFamily: {
+                        serif: ["Playfair Display", "Georgia", "serif"],
+                        sans: ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #fff8f8;
+            color: #1e1b1c;
+            font-family: 'Manrope', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .shadow-luxury-floating {
+            box-shadow: 0 -8px 28px -6px rgba(50, 36, 32, 0.08);
+        }
+
+        .shadow-luxury-card {
+            box-shadow: 0 4px 24px -4px rgba(105, 92, 86, 0.07);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Toast Popup */
+        #toast-container {
+            position: fixed;
+            bottom: 84px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .toast-msg {
+            background-color: rgba(30, 27, 28, 0.92);
+            backdrop-filter: blur(10px);
+            color: #fff8f8;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased pb-28">
+
+    <!-- Toast Notification Anchor -->
+    <div id="toast-container"></div>
+
+    <!-- Announcement Ticker Banner -->
+    <aside class="bg-secondary-container/60 text-on-secondary-container border-b border-outline-variant/30 py-2 px-4 text-center">
+        <p class="text-[11px] font-semibold tracking-widest uppercase flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-[13px] text-primary">local_shipping</span>
+            <span>Complimentary Pan-India Delivery on orders above ₹1,999 • Code: <strong class="text-primary font-bold">HAVEN10</strong></span>
+        </p>
+    </aside>
+
+    <!-- Top App Bar Navigation Header -->
+    <header class="sticky top-0 left-0 w-full z-40 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-xs">
+        <div class="flex justify-between items-center px-4 h-16 max-w-7xl mx-auto">
+            <button onclick="toggleDrawer(true)" class="text-primary p-2 -ml-2 rounded-full hover:bg-surface-container/50 transition">
+                <span class="material-symbols-outlined text-[24px]">menu</span>
+            </button>
+
+            <a href="#" onclick="switchScreen('home'); return false;" class="font-serif text-2xl tracking-tight text-on-surface italic font-medium hover:text-primary transition">
+                Her Haven
+            </a>
+
+            <div class="flex items-center gap-1">
+                <button onclick="switchScreen('categories')" class="text-primary p-2 rounded-full hover:bg-surface-container/50 transition">
+                    <span class="material-symbols-outlined text-[22px]">search</span>
+                </button>
+                <button onclick="switchScreen('bag')" class="text-primary p-2 rounded-full hover:bg-surface-container/50 transition relative">
+                    <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+                    <span id="header-bag-count" class="absolute top-1 right-1 bg-primary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">3</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN VIEW STAGE -->
+    <main class="w-full max-w-7xl mx-auto">
+
+        <!-- SCREEN 1: HOME VIEW -->
+        <div id="screen-home" class="screen-view">
+            <!-- Hero Stage -->
+            <section class="px-4 pt-3 pb-6">
+                <div class="relative w-full rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 aspect-[4/5] sm:aspect-[16/9] flex items-end">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs5C8Y_7H9HOsR6xUv75SpF5oXgLaUIsVF3Sp-l8EM4uNSzcPIW-Mq7Chi0dX--DGQT6FVbtVqFYO6aDU7gWQ2unGLE5OleU6gh1RVvKdWpNC-CC2ATGzBEdHqA3a5Wf7wzRflwEyjZjrRCrjIgeuAHQ8iXCfX6sGfLHYrWAo_7IVmJkUmxuns70YtRzw90nzuAQUr2QYVCm8bY7dUzrkHrMeMkcKEI0106ybLX12x5-E_zDLjIQnn" alt="Her Haven Editorial" class="absolute inset-0 w-full h-full object-cover object-top" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/35 to-transparent"></div>
+
+                    <div class="relative z-10 p-6 sm:p-10 w-full text-white">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 mb-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase">Summer Haute Edition</span>
+                        </div>
+                        <h1 class="font-serif text-4xl sm:text-5xl font-light leading-tight mb-2">
+                            Your Style.<br />
+                            <span class="italic">Your Beauty.</span> Your Haven.
+                        </h1>
+                        <p class="text-xs sm:text-sm text-gray-200 max-w-sm mb-6">
+                            Curated fashion, fine fragrances & artisanal jewellery crafted for the modern woman.
+                        </p>
+                        <div class="flex gap-3">
+                            <button onclick="switchScreen('categories')" class="bg-primary text-white font-semibold text-xs py-3 px-6 rounded-xl hover:bg-primary-container transition shadow-md">
+                                Shop Now
+                            </button>
+                            <button onclick="openProductDetail('jasmine-blanc-extrait')" class="bg-white/20 backdrop-blur-md text-white border border-white/40 font-semibold text-xs py-3 px-5 rounded-xl hover:bg-white/30 transition">
+                                Explore Collection
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Curated Realms Carousel -->
+            <section class="py-4 border-b border-outline-variant/20 mb-8">
+                <div class="px-4 flex justify-between items-baseline mb-3">
+                    <h2 class="font-serif text-xl font-semibold text-on-surface">Curated Realms</h2>
+                    <span class="text-[10px] font-bold tracking-wider text-secondary uppercase">SWIPE TO BROWSE</span>
+                </div>
+                <div class="flex gap-4 overflow-x-auto hide-scrollbar px-4 pb-2">
+                    <button onclick="filterCategory('women')" class="flex flex-col items-center shrink-0 group">
+                        <div class="w-16 h-16 rounded-full p-0.5 border border-outline-variant/60 group-hover:border-primary transition">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC9XaKibpTJ0haK6MWjMq4jODQHAM6SBtlzo1Nu4ACgAIm9qBfEX5jBKzRAxUWKyYFQ3P4dxE1te5lmyh27lTKQrjx4d-CmfMUq2d7zs4iKm-T4V_VgztFE_MSKeN5ctrjjoouGyfnstxbS__9fyQShuC5Ng8Vu7Q4cXS2VM67c5L_v3JqNZo7IILbOQW1lOYwNvuBHw0xGdin8ufZ2pMJdCm2TI7he95hvW-fE-9mYYynCJEtHJHX" class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <span class="text-[11px] font-semibold text-on-surface mt-2 group-hover:text-primary">Apparel</span>
+                    </button>
+
+                    <button onclick="filterCategory('perfumes')" class="flex flex-col items-center shrink-0 group">
+                        <div class="w-16 h-16 rounded-full p-0.5 border border-outline-variant/60 group-hover:border-primary transition">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDsZ1mE6yxM8do7UnB3YDLFBkB7YMDgqwt3F5arr_NdiGPjT_r_AmwuHbRpr7e9lrlG9Ayh6BqKCbOIkNV0woJ6Wk1pqxnVY3K2_9eJZCkzRQuhfpQnO3TmzFuTshGg7Y3J-UsLYvneEHc9w7ek70Y090im8o9026jvHDMj3s1auQgSObsvxS3-_6LRGZvyjGmE34TrY2S6libiih2s8mEPTAdiuh2oRJnygjjp6KYS0MZ2RMZsQY6" class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <span class="text-[11px] font-semibold text-on-surface mt-2 group-hover:text-primary">Perfumes</span>
+                    </button>
+
+                    <button onclick="filterCategory('jewellery')" class="flex flex-col items-center shrink-0 group">
+                        <div class="w-16 h-16 rounded-full p-0.5 border border-outline-variant/60 group-hover:border-primary transition">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXnj6V3o2sxTTu134uWDsmlHSTnownOJBJRFl940B-njIgZTcwbySVT0AH4GjdOTOwiTspxg29WUxVnmDVQCs7YxhqvdBKLYl5Y2LvDyQIzzjDSy-K7Kd7Drf25fzTCI1iFT2R7kZKy3oYLADHaCDLaUBg42LRxElWAuoqsSyjG2jJGHAE_lV4_3T6XjiEk5DYUgNExvC6CiyZde5hTNcJnwqCE22FiL0ktrJr7RdxWhB4SXiFcXwA" class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <span class="text-[11px] font-semibold text-on-surface mt-2 group-hover:text-primary">Jewellery</span>
+                    </button>
+
+                    <button onclick="filterCategory('footwear')" class="flex flex-col items-center shrink-0 group">
+                        <div class="w-16 h-16 rounded-full p-0.5 border border-outline-variant/60 group-hover:border-primary transition">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCavlBki17J7jhL27K8goFkzvzJveljmdaSxZEkChJhFr4yca7WkGNprHgWBGbWY1syztApkWUb_5ksu2AFD3DXSlc3hO6StKvPcgx0lHba1MebY8n0IvH7KuVzu0H0K2vpDcWI9woDoVdsaaAO7ccgDwVnLj3eHR_w_uIEXe64KkzS4AZxT0BqcASB_bV3c97MCmWV2XMLiOU9nKSL_Pq9BPMiI6vGx39FCaOA_zuqwKbmGTfEk3gA" class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <span class="text-[11px] font-semibold text-on-surface mt-2 group-hover:text-primary">Footwear</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- New Arrivals Grid -->
+            <section class="px-4 mb-10">
+                <div class="flex justify-between items-baseline mb-4">
+                    <div>
+                        <span class="text-[10px] font-bold tracking-widest text-primary uppercase block">The Seasonal Edit</span>
+                        <h2 class="font-serif text-2xl font-semibold text-on-surface">New Arrivals</h2>
+                    </div>
+                    <button onclick="switchScreen('categories')" class="text-xs font-semibold text-primary hover:underline">View All →</button>
+                </div>
+
+                <div id="home-products-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <!-- Products injected dynamically -->
+                </div>
+            </section>
+
+            <!-- Sensorial Atelier Banner -->
+            <section class="px-4 mb-12">
+                <div class="relative rounded-2xl overflow-hidden bg-on-surface text-white p-8 min-h-[340px] flex flex-col justify-end">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqkh_qozY1riBFkPp5yRiPAEfP1SXv2VhrLKWyWpi700Zn0_44qAQrTUwMpmGLEvX5Z1AtALGbS-T73INDRkkL4V1FfX7kUykI9BTZTkH7yPthPwy5c1Rh1ysFw1Vkq3OGV6xSDd0WX9Gf-J8yOkrW8jUp-vwqRLrSV1XLd2xI3C0Ayt8mXTmwrCPSZKNNUVHHkoksq82q_lUiuE5m2s0sVRKBAEWaErao8wDlF1VuvCG571vdmSdB" class="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-screen" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/80 to-transparent"></div>
+
+                    <div class="relative z-10 max-w-md">
+                        <span class="text-[10px] font-bold tracking-widest text-primary-fixed uppercase mb-1 block">Sensory Atelier</span>
+                        <h3 class="font-serif text-3xl font-light mb-2">The Fragrance Lounge</h3>
+                        <p class="text-xs text-gray-300 mb-4">Distilled in Grasse, poured by hand. Notes of sun-warmed fig, sandalwood, and desert oud.</p>
+                        <button onclick="openProductDetail('jasmine-blanc-extrait')" class="bg-primary text-white font-semibold text-xs px-5 py-2.5 rounded-xl hover:bg-primary-container transition">
+                            Discover Jasmine Blanc →
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- SCREEN 2: CATALOG VIEW -->
+        <div id="screen-categories" class="screen-view hidden">
+            <div class="px-4 py-4">
+                <h1 class="font-serif text-3xl font-semibold text-on-surface mb-2">Discover Haven Collection</h1>
+                <p class="text-xs text-secondary mb-4">Handcrafted apparel, fine fragrances, and heritage Kundan jewelry.</p>
+
+                <!-- Filter Category Chips -->
+                <div class="flex gap-2 overflow-x-auto hide-scrollbar mb-6">
+                    <button onclick="filterCategory('all')" class="cat-chip px-4 py-2 rounded-full text-xs font-semibold bg-on-surface text-white shrink-0">All Items</button>
+                    <button onclick="filterCategory('women')" class="cat-chip px-4 py-2 rounded-full text-xs font-semibold bg-surface-container border border-outline-variant/40 text-secondary shrink-0">Women's Wear</button>
+                    <button onclick="filterCategory('perfumes')" class="cat-chip px-4 py-2 rounded-full text-xs font-semibold bg-surface-container border border-outline-variant/40 text-secondary shrink-0">Perfumes</button>
+                    <button onclick="filterCategory('jewellery')" class="cat-chip px-4 py-2 rounded-full text-xs font-semibold bg-surface-container border border-outline-variant/40 text-secondary shrink-0">Jewellery</button>
+                    <button onclick="filterCategory('footwear')" class="cat-chip px-4 py-2 rounded-full text-xs font-semibold bg-surface-container border border-outline-variant/40 text-secondary shrink-0">Footwear</button>
+                    <button onclick="filterCategory('makeup')" class="cat-chip px-4 py-2 rounded-full text-xs font-semibold bg-surface-container border border-outline-variant/40 text-secondary shrink-0">Beauty</button>
+                </div>
+
+                <!-- Catalog Grid -->
+                <div id="catalog-products-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Injected dynamically -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SCREEN 3: PRODUCT DETAIL VIEW -->
+        <div id="screen-product-detail" class="screen-view hidden">
+            <div class="px-4 py-4 max-w-4xl mx-auto space-y-6">
+                <button onclick="switchScreen('categories')" class="text-xs font-semibold text-secondary hover:text-primary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">arrow_back</span> Back to Collection
+                </button>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Product Gallery -->
+                    <div class="space-y-3">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-outline-variant/30 shadow-sm bg-surface-container">
+                            <img id="detail-main-img" src="" class="w-full h-full object-cover" />
+                        </div>
+                        <div id="detail-gallery-thumbs" class="flex gap-2 overflow-x-auto">
+                            <!-- Thumbnails injected dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Product Details -->
+                    <div class="space-y-4">
+                        <span id="detail-tag" class="bg-secondary-container text-primary text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">EXCLUSIVE</span>
+                        <h1 id="detail-title" class="font-serif text-3xl text-on-surface">Jasmine Blanc</h1>
+                        <p id="detail-subtitle" class="text-xs text-secondary">Extrait de Parfum 100ml</p>
+
+                        <div class="flex items-center gap-2">
+                            <span id="detail-price" class="font-bold text-2xl text-primary">₹3,450</span>
+                            <span id="detail-orig-price" class="text-sm text-secondary line-through">₹4,600</span>
+                        </div>
+
+                        <p id="detail-desc" class="text-xs text-on-surface-variant leading-relaxed">
+                            Distilled in Grasse, poured by hand. Notes of sun-warmed fig, sandalwood, and desert oud crafted to leave an unforgettable imprint.
+                        </p>
+
+                        <div class="pt-4 border-t border-outline-variant/30 space-y-3">
+                            <button onclick="addToBagFromDetail()" class="w-full bg-primary text-white py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider hover:bg-primary-container transition shadow-md">
+                                Add to Haven Bag
+                            </button>
+                            <button onclick="toggleConcierge(true)" class="w-full bg-surface-container text-primary py-3 rounded-xl font-semibold text-xs hover:bg-secondary-container transition">
+                                Ask Haven Stylist Concierge
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SCREEN 4: BAG VIEW -->
+        <div id="screen-bag" class="screen-view hidden">
+            <div class="px-4 py-4 max-w-3xl mx-auto space-y-6">
+                <h1 class="font-serif text-3xl text-on-surface">My Haven Bag</h1>
+
+                <!-- Bag Items List -->
+                <div id="bag-items-container" class="space-y-3">
+                    <!-- Injected dynamically -->
+                </div>
+
+                <!-- Coupon Section -->
+                <div class="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/30 space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold text-secondary uppercase tracking-wider">Haven Privilege Code</span>
+                        <span class="text-emerald-700 font-bold">HAVEN10 (10% OFF APPLIED)</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <input id="coupon-code-input" type="text" value="HAVEN10" class="flex-1 bg-surface-container-low px-3 py-2 rounded-lg text-xs font-bold uppercase border border-outline-variant/30" />
+                        <button onclick="showToast('Coupon HAVEN10 active! Saved 10%')" class="bg-primary text-white text-xs px-4 py-2 rounded-lg font-semibold">Apply</button>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/30 space-y-3">
+                    <h3 class="font-bold text-xs uppercase text-on-surface tracking-wider">Order Summary</h3>
+                    <div class="space-y-1.5 text-xs text-secondary">
+                        <div class="flex justify-between"><span>Subtotal</span><span id="bag-subtotal" class="font-semibold text-on-surface">₹14,839</span></div>
+                        <div class="flex justify-between text-primary"><span>Privilege Discount (HAVEN10)</span><span id="bag-discount">-₹1,484</span></div>
+                        <div class="flex justify-between text-emerald-700"><span>Delivery</span><span class="font-bold">FREE</span></div>
+                    </div>
+                    <div class="pt-3 border-t border-outline-variant/30 flex justify-between items-baseline">
+                        <span class="font-bold text-base text-on-surface">Total Payable</span>
+                        <span id="bag-total" class="font-serif text-2xl font-bold text-primary">₹13,355</span>
+                    </div>
+
+                    <button onclick="toggleCheckout(true)" class="w-full bg-primary text-white py-3.5 rounded-xl font-semibold text-xs uppercase tracking-wider hover:bg-primary-container transition shadow-md mt-4">
+                        Proceed to Express Checkout →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SCREEN 5: WISHLIST VIEW -->
+        <div id="screen-wishlist" class="screen-view hidden">
+            <div class="px-4 py-4 max-w-4xl mx-auto space-y-6">
+                <div class="flex justify-between items-baseline">
+                    <div>
+                        <h1 class="font-serif text-3xl text-on-surface">Sanctuary Wishlist</h1>
+                        <p class="text-xs text-secondary">Your saved couture & heirloom jewel pieces.</p>
+                    </div>
+                    <button onclick="moveAllWishlistToBag()" class="text-xs font-bold text-primary hover:underline">Move All to Bag</button>
+                </div>
+
+                <div id="wishlist-products-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <!-- Wishlist items injected dynamically -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FLOATING CAPSULE BOTTOM NAVIGATION BAR -->
+    <nav class="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 bg-surface/90 backdrop-blur-xl border border-outline-variant/40 rounded-full px-5 py-2.5 shadow-luxury-floating flex items-center gap-6">
+        <button onclick="switchScreen('home')" class="nav-btn flex flex-col items-center text-primary" data-screen="home">
+            <span class="material-symbols-outlined text-[22px]">home</span>
+            <span class="text-[9px] font-bold tracking-wider uppercase">Home</span>
+        </button>
+
+        <button onclick="switchScreen('categories')" class="nav-btn flex flex-col items-center text-secondary hover:text-primary" data-screen="categories">
+            <span class="material-symbols-outlined text-[22px]">grid_view</span>
+            <span class="text-[9px] font-bold tracking-wider uppercase">Catalog</span>
+        </button>
+
+        <button onclick="switchScreen('bag')" class="nav-btn flex flex-col items-center text-secondary hover:text-primary relative" data-screen="bag">
+            <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+            <span id="nav-bag-badge" class="absolute -top-1 -right-1 bg-primary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">3</span>
+            <span class="text-[9px] font-bold tracking-wider uppercase">Bag</span>
+        </button>
+
+        <button onclick="switchScreen('wishlist')" class="nav-btn flex flex-col items-center text-secondary hover:text-primary relative" data-screen="wishlist">
+            <span class="material-symbols-outlined text-[22px]">favorite</span>
+            <span id="nav-wishlist-badge" class="absolute -top-1 -right-1 bg-tertiary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">6</span>
+            <span class="text-[9px] font-bold tracking-wider uppercase">Wishlist</span>
+        </button>
+    </nav>
+
+
+    <!-- SLIDE-OUT ATELIER DRAWER MENU -->
+    <div id="drawer-overlay" onclick="toggleDrawer(false)" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 hidden"></div>
+    <aside id="drawer-menu" class="fixed top-0 left-0 h-full w-80 bg-surface z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 bg-surface-container border-b border-outline-variant/30 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAULUCNSAhj5f9-8ZYhKWmF19o524b593ikkDzihTLiPF2NU3cXAN64OZriGZ8RDNGkcaWn30_WBxuARXpFmyNikKtm41n0JdGR4pozGNr3VvXXnTR1yqvodzaQHPwd2_gWKlEMEAsvvX4cSupBtN-N10tLFbnCzJpTZBhKFQ4tM0gLjKdDS8m3vJpnMaqcni1oBnpijtRLI3j2Dl4haXsKYhzAOidAsvDUf_n88cTGc5_VvGt4bhYO" class="w-12 h-12 rounded-full object-cover border border-primary" />
+                <div>
+                    <h4 class="font-serif font-semibold text-on-surface">Priya Sharma</h4>
+                    <span class="text-[10px] font-bold uppercase text-primary tracking-wider">Rose Gold Tier • 1,420 Haven Coins</span>
+                </div>
+            </div>
+            <button onclick="toggleDrawer(false)" class="text-secondary hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+        </div>
+
+        <div class="p-6 space-y-4 flex-grow overflow-y-auto">
+            <a href="#" onclick="switchScreen('home'); toggleDrawer(false); return false;" class="block text-sm font-semibold text-on-surface hover:text-primary">Home Atelier</a>
+            <a href="#" onclick="switchScreen('categories'); toggleDrawer(false); return false;" class="block text-sm font-semibold text-on-surface hover:text-primary">Browse All Collections</a>
+            <a href="#" onclick="switchScreen('bag'); toggleDrawer(false); return false;" class="block text-sm font-semibold text-on-surface hover:text-primary">My Haven Bag</a>
+            <a href="#" onclick="switchScreen('wishlist'); toggleDrawer(false); return false;" class="block text-sm font-semibold text-on-surface hover:text-primary">Sanctuary Wishlist</a>
+            <a href="#" onclick="toggleConcierge(true); toggleDrawer(false); return false;" class="block text-sm font-semibold text-primary">Haven Styling Concierge Chat</a>
+        </div>
+    </aside>
+
+
+    <!-- CONCIERGE CHAT MODAL -->
+    <div id="concierge-modal" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-surface rounded-2xl w-full max-w-md p-6 shadow-2xl space-y-4 border border-outline-variant/30">
+            <div class="flex justify-between items-center border-b border-outline-variant/30 pb-3">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">support_agent</span>
+                    <h3 class="font-serif text-xl text-on-surface">Haven Stylist Concierge</h3>
+                </div>
+                <button onclick="toggleConcierge(false)" class="text-secondary hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+            </div>
+
+            <div class="space-y-3 max-h-60 overflow-y-auto text-xs">
+                <div class="bg-surface-container p-3 rounded-xl text-on-surface max-w-[85%]">
+                    Hello Priya! I am your personal Haven Stylist. How may I assist your wardrobe or fragrance selection today?
+                </div>
+                <div class="bg-primary text-white p-3 rounded-xl text-on-primary ml-auto max-w-[85%]">
+                    Can you recommend a fragrance for an evening reception?
+                </div>
+                <div class="bg-surface-container p-3 rounded-xl text-on-surface max-w-[85%]">
+                    I recommend our signature <strong>Velvet Noir Eau De Parfum</strong> or <strong>Jasmine Blanc Extrait</strong>. Both feature rich sandalwood and ambient amber longevity.
+                </div>
+            </div>
+
+            <div class="flex gap-2 pt-2 border-t border-outline-variant/30">
+                <input type="text" placeholder="Ask your concierge stylist..." class="flex-1 bg-surface-container-low px-3 py-2 rounded-xl text-xs border border-outline-variant/30" />
+                <button onclick="showToast('Concierge message sent!')" class="bg-primary text-white text-xs px-4 py-2 rounded-xl font-semibold">Send</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- EXPRESS CHECKOUT MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-surface rounded-2xl w-full max-w-md p-6 shadow-2xl space-y-4 border border-outline-variant/30">
+            <div class="flex justify-between items-center border-b border-outline-variant/30 pb-3">
+                <h3 class="font-serif text-xl text-on-surface">Express Checkout</h3>
+                <button onclick="toggleCheckout(false)" class="text-secondary hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+            </div>
+
+            <div class="space-y-3 text-xs">
+                <p className="text-secondary">Shipping to: <strong>Priya Sharma, Bandra West, Mumbai 400050</strong></p>
+                <div class="p-3 bg-surface-container rounded-xl flex justify-between font-bold text-primary">
+                    <span>Total Order Value</span>
+                    <span>₹13,355.00</span>
+                </div>
+                <button onclick="completeCheckout()" class="w-full bg-primary text-white py-3.5 rounded-xl font-semibold uppercase tracking-wider shadow-md">
+                    Confirm Order & Pay Securely
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Standalone Data & App Engine -->
+    <script>
+        const PRODUCTS = [
+            {
+                id: 'jasmine-blanc-extrait',
+                name: 'Jasmine Blanc Extrait de Parfum (100ml)',
+                category: 'perfumes',
+                price: 3450,
+                originalPrice: 4600,
+                rating: 4.9,
+                reviewsCount: 342,
+                tag: 'EXCLUSIVE',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUWiRleQq9WBc3G8m21Zy0uhRWM8jVu4mIdm2GIAGeGi0_1pOuOveLww1wbFWrrXtZUMaemLf3j8gDVKUqjBs0EickJOovdcIJ0z_qQ44m8Y2nm-mR5zqKGg1uZcb_Q6YTGeHoHydoCln8ipEjq63_45DeUST0dGqSWVADySyHGppc-RNSO4oBfQDhcUtvC-TwTH0EBBB4YmM3u7ES0Z_ALoOp05xcQhRxumthnLPGUJyUYNIHlrNF',
+                subtitle: 'Grasse Sambac Jasmine & Sandalwood',
+                desc: 'Distilled in Grasse, poured by hand. Notes of sun-warmed fig, sandalwood, and desert oud crafted to leave an unforgettable imprint.'
+            },
+            {
+                id: 'celestial-organza-lehenga',
+                name: 'Celestial Organza Lehenga',
+                category: 'women',
+                price: 8499,
+                originalPrice: 11999,
+                rating: 4.9,
+                reviewsCount: 128,
+                tag: 'BESTSELLER',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBb7MsIb74_loLLR1vKVzQk9KmtHK0AA3H_A4cywuPmv-M1BXKwTmnIjLmdJ-VfsPA5_gGgACWPwZH-FW8Xciuc4blNuUqS6Ybe6PqhJFlg_4t25vya5wjX9fExxe4HO5cYpZKL0l5YAgeWIjN9A6i__EMUiY9f1M_QY-UpQOjrIg6ofmkDSBAn9haWfDLdXz07M66D_V2VyJTb0AGpLIq6bMaV88aw7d0mlXbBlZYaAMH2f5KR-rUV',
+                subtitle: 'Alabaster Rose & Handwoven Zari',
+                desc: 'An ethereal blush pink and warm terracotta silk organza lehenga styled with delicate hand embroidery.'
+            },
+            {
+                id: 'ethereal-chanderi-anarkali',
+                name: 'Ethereal Chanderi Silk Anarkali Set',
+                category: 'women',
+                price: 14950,
+                rating: 5.0,
+                reviewsCount: 28,
+                tag: 'NEW SEASON',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD-PYn6-85lnZrPRXxeGBWql0cIf0_vmKeLMGAEzKwia0lOqtxJjb2LDPbNPsRaXhgkbStbGc9pww47I5b0mc9O7uRTwOp-G4i1Yd09lZYZCGhcIllIDXDWBWWcfqNn_uJjTTkjoHfiDMyC-ofDVBg8r-kF1z8M4loy6QBHvFiwlNpjnqFnL1nW3BsJnRoN_QJnbiy-HEV2jZ0OLdWv0PqchAPo0tple6Vw-6dvyO342zqNTJyz2lST',
+                subtitle: 'Gold Zari Borders & Pure Chanderi',
+                desc: 'Modern Indian silhouette wearing an ethereal chanderi silk anarkali set with gold zari borders.'
+            },
+            {
+                id: 'velvet-noir-parfum',
+                name: 'Velvet Noir Eau De Parfum (100ml)',
+                category: 'perfumes',
+                price: 6800,
+                rating: 5.0,
+                reviewsCount: 44,
+                tag: 'SIGNATURE',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDYbfHN7JIq1UPOc7uWa-wljZaRqOdvS4UR2ZrpMUVymynadihG-V0t1AnsZJh68_lPXRuAkukB3s4K8qFSqrXIEf63nmr2kOFzjDJe_QyPkEr7rGU2RhZCzvIIdsk9d0o42dUYPoqNOXESURC-NHX8Rt-7h6LkUIAtZCJLPdEpdaCTmcOUXFNRenECb0k-1BEVLh4TI-ohwRmw8XdNC0rZLxZ6iQq1vcmBsTRmerc_0CZ1cyeI8cC6',
+                subtitle: 'Smoked Vanilla & Amber',
+                desc: 'Sleek amber perfume bottle titled Velvet Noir Eau De Parfum resting on raw terracotta stone.'
+            },
+            {
+                id: 'rose-cut-kundan-bangles',
+                name: 'Rose-Cut Kundan Floral Bangles',
+                category: 'jewellery',
+                price: 2890,
+                rating: 4.5,
+                reviewsCount: 19,
+                tag: 'LIMITED',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBfpY6qdNnKTxrTTaNLk6Uy2nGa1OYhwS9uTIzpFN07_OFPj6dUMy-rcJfJoIID7s052CmpNtLSu6FVe2GG6AFtKUtUH4_Qi27016ezceN8fYED3KEAUKLuxYIEWvtQbKwcHUdqFMDq_1nzRUDr7LVJbLqWZWeAKqbWgGzGW9IIb9JnJkWou1zbczX3DJHAVVYMB59a5h6nNY8BMkihPZKbw81ZODdIq3BtlZErV-u-KBqG01uEx6uA',
+                subtitle: '22k Gold Micron Plated Pair',
+                desc: 'Intricate artisanal rose-cut kundan gold bangles adorned with delicate meenakari enamel floral details.'
+            },
+            {
+                id: 'gilded-stiletto-strappy-heels',
+                name: 'Gilded Stiletto Strappy Heels',
+                category: 'footwear',
+                price: 4150,
+                rating: 4.7,
+                reviewsCount: 62,
+                tag: 'ITALIAN NAPPA',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_s-uS8kYi8cDd-_f-ukgSKxAZGbmQvn3R6aci0370lRiuGWmWGh0zJOcmwuSjZ8_X-cOa75IbW_rFUOjTfDgSqvlk0mXdp4i5nDNAqGKhHv_NLcH9eFPLdvURp3FqbR2zs9P2z9PhnKw7UoSDMN_QDNsp9AJrXW3q9PrL2j9s9Phc5fd47QaD7W4gYs9lmBiKnsVjFYVhbj7_CIECOdHs8FJ9gTwfPmDkP1ILe9nAX-IeoHsEr8gj',
+                subtitle: '85mm Metallic Heel',
+                desc: 'Metallic gilded rose-gold stiletto heels with minimalist delicate ankle straps.'
+            }
+        ];
+
+        let bag = [
+            { id: 'jasmine-blanc-extrait', qty: 1 },
+            { id: 'celestial-organza-lehenga', qty: 1 },
+            { id: 'rose-cut-kundan-bangles', qty: 1 }
+        ];
+
+        let wishlist = new Set(['jasmine-blanc-extrait', 'ethereal-chanderi-anarkali', 'gilded-stiletto-strappy-heels']);
+        let selectedCategory = 'all';
+        let currentDetailProduct = PRODUCTS[0];
+
+        function showToast(msg) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast-msg';
+            toast.innerHTML = `<span class="material-symbols-outlined text-sm">check_circle</span> <span>${msg}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 2600);
+        }
+
+        function switchScreen(screenName) {
+            document.querySelectorAll('.screen-view').forEach(s => s.classList.add('hidden'));
+            const target = document.getElementById(`screen-${screenName}`);
+            if (target) target.classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.dataset.screen === screenName) {
+                    btn.classList.add('text-primary');
+                    btn.classList.remove('text-secondary');
+                } else {
+                    btn.classList.remove('text-primary');
+                    btn.classList.add('text-secondary');
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            renderAll();
+        }
+
+        function filterCategory(cat) {
+            selectedCategory = cat;
+            switchScreen('categories');
+        }
+
+        function toggleWishlist(id) {
+            if (wishlist.has(id)) {
+                wishlist.delete(id);
+                showToast('Removed item from Sanctuary Wishlist');
+            } else {
+                wishlist.add(id);
+                showToast('Saved item to Sanctuary Wishlist');
+            }
+            renderAll();
+        }
+
+        function addToBag(id) {
+            const existing = bag.find(b => b.id === id);
+            if (existing) existing.qty += 1;
+            else bag.push({ id, qty: 1 });
+
+            const prod = PRODUCTS.find(p => p.id === id);
+            showToast(`Added "${prod ? prod.name : 'Item'}" to your Haven Bag`);
+            renderAll();
+        }
+
+        function removeFromBag(id) {
+            bag = bag.filter(b => b.id !== id);
+            showToast('Item removed from your bag');
+            renderAll();
+        }
+
+        function openProductDetail(id) {
+            const prod = PRODUCTS.find(p => p.id === id);
+            if (!prod) return;
+            currentDetailProduct = prod;
+
+            document.getElementById('detail-main-img').src = prod.image;
+            document.getElementById('detail-title').innerText = prod.name;
+            document.getElementById('detail-subtitle').innerText = prod.subtitle;
+            document.getElementById('detail-price').innerText = `₹${prod.price.toLocaleString()}`;
+            document.getElementById('detail-orig-price').innerText = prod.originalPrice ? `₹${prod.originalPrice.toLocaleString()}` : '';
+            document.getElementById('detail-desc').innerText = prod.desc;
+
+            switchScreen('product-detail');
+        }
+
+        function addToBagFromDetail() {
+            if (currentDetailProduct) addToBag(currentDetailProduct.id);
+        }
+
+        function moveAllWishlistToBag() {
+            wishlist.forEach(id => addToBag(id));
+            wishlist.clear();
+            showToast('Moved all saved items to your bag');
+            renderAll();
+        }
+
+        function toggleDrawer(open) {
+            const drawer = document.getElementById('drawer-menu');
+            const overlay = document.getElementById('drawer-overlay');
+            if (open) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        function toggleConcierge(open) {
+            const modal = document.getElementById('concierge-modal');
+            if (open) modal.classList.remove('hidden');
+            else modal.classList.add('hidden');
+        }
+
+        function toggleCheckout(open) {
+            const modal = document.getElementById('checkout-modal');
+            if (open) modal.classList.remove('hidden');
+            else modal.classList.add('hidden');
+        }
+
+        function completeCheckout() {
+            toggleCheckout(false);
+            bag = [];
+            showToast('Order confirmed! Sanctuary concierge dispatch initiated.');
+            renderAll();
+            switchScreen('home');
+        }
+
+        function renderAll() {
+            // Badges
+            const totalBagQty = bag.reduce((a, b) => a + b.qty, 0);
+            document.getElementById('header-bag-count').innerText = totalBagQty;
+            document.getElementById('nav-bag-badge').innerText = totalBagQty;
+            document.getElementById('nav-wishlist-badge').innerText = wishlist.size;
+
+            // Render Home Grid
+            const homeGrid = document.getElementById('home-products-grid');
+            if (homeGrid) {
+                homeGrid.innerHTML = PRODUCTS.slice(0, 4).map(renderProductCard).join('');
+            }
+
+            // Render Catalog Grid
+            const catalogGrid = document.getElementById('catalog-products-grid');
+            if (catalogGrid) {
+                const list = selectedCategory === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === selectedCategory);
+                catalogGrid.innerHTML = list.map(renderProductCard).join('');
+            }
+
+            // Render Bag
+            const bagContainer = document.getElementById('bag-items-container');
+            if (bagContainer) {
+                let subtotal = 0;
+                bagContainer.innerHTML = bag.map(item => {
+                    const prod = PRODUCTS.find(p => p.id === item.id);
+                    if (!prod) return '';
+                    const itemTotal = prod.price * item.qty;
+                    subtotal += itemTotal;
+
+                    return `
+                        <div class="p-3 bg-white rounded-xl border border-outline-variant/30 flex gap-3 shadow-xs">
+                            <img src="${prod.image}" class="w-16 h-20 object-cover rounded-lg shrink-0 cursor-pointer" onclick="openProductDetail('${prod.id}')" />
+                            <div class="flex-1 flex flex-col justify-between">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="text-xs font-bold text-on-surface line-clamp-1 cursor-pointer" onclick="openProductDetail('${prod.id}')">${prod.name}</h4>
+                                        <p class="text-[11px] text-secondary">${prod.subtitle}</p>
+                                    </div>
+                                    <button onclick="removeFromBag('${prod.id}')" class="text-secondary hover:text-primary"><span class="material-symbols-outlined text-sm">delete</span></button>
+                                </div>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-sm text-primary">₹${itemTotal.toLocaleString()}</span>
+                                    <span class="text-xs font-semibold text-secondary">Qty: ${item.qty}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                const discount = Math.round(subtotal * 0.1);
+                const total = subtotal - discount;
+
+                document.getElementById('bag-subtotal').innerText = `₹${subtotal.toLocaleString()}`;
+                document.getElementById('bag-discount').innerText = `-₹${discount.toLocaleString()}`;
+                document.getElementById('bag-total').innerText = `₹${total.toLocaleString()}`;
+            }
+
+            // Render Wishlist
+            const wishGrid = document.getElementById('wishlist-products-grid');
+            if (wishGrid) {
+                const wishList = PRODUCTS.filter(p => wishlist.has(p.id));
+                if (wishList.length === 0) {
+                    wishGrid.innerHTML = `<p class="col-span-full text-center py-10 text-xs text-secondary">Your Sanctuary Wishlist is currently empty.</p>`;
+                } else {
+                    wishGrid.innerHTML = wishList.map(renderProductCard).join('');
+                }
+            }
+        }
+
+        function renderProductCard(prod) {
+            const isWish = wishlist.has(prod.id);
+            return `
+                <article class="bg-white rounded-xl p-2 border border-outline-variant/30 flex flex-col justify-between group shadow-xs">
+                    <div class="relative aspect-[4/5] rounded-lg overflow-hidden bg-surface-container mb-2">
+                        <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition" onclick="openProductDetail('${prod.id}')" />
+                        <button onclick="toggleWishlist('${prod.id}')" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-secondary hover:text-primary">
+                            <span class="material-symbols-outlined text-[16px] ${isWish ? 'text-primary filled' : ''}">favorite</span>
+                        </button>
+                    </div>
+
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 onclick="openProductDetail('${prod.id}')" class="font-semibold text-xs text-on-surface line-clamp-1 cursor-pointer hover:text-primary">${prod.name}</h4>
+                            <p class="text-[10px] text-secondary line-clamp-1">${prod.subtitle}</p>
+                        </div>
+                        <div class="mt-2 pt-1 border-t border-outline-variant/20 flex justify-between items-center">
+                            <span class="font-bold text-xs text-primary">₹${prod.price.toLocaleString()}</span>
+                            <button onclick="addToBag('${prod.id}')" class="w-6 h-6 rounded-md bg-primary text-white flex items-center justify-center hover:bg-primary-container">
+                                <span class="material-symbols-outlined text-[14px]">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            switchScreen('home');
+        });
+    </script>
+</body>
+</html>

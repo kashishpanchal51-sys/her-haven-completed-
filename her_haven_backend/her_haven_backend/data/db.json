@@ -1,0 +1,233 @@
+{
+  "products": [
+    {
+      "id": "jasmine-blanc-extrait",
+      "name": "Jasmine Blanc Extrait de Parfum (100ml)",
+      "category": "perfumes",
+      "categoryLabel": "Fragrance & Accessories",
+      "subtitle": "Paired with an exclusive limited edition mulberry silk scarf, crafted in Lyon.",
+      "price": 3450,
+      "originalPrice": 4600,
+      "rating": 4.9,
+      "reviewsCount": 342,
+      "tag": "EXCLUSIVE",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBUWiRleQq9WBc3G8m21Zy0uhRWM8jVu4mIdm2GIAGeGi0_1pOuOveLww1wbFWrrXtZUMaemLf3j8gDVKUqjBs0EickJOovdcIJ0z_qQ44m8Y2nm-mR5zqKGg1uZcb_Q6YTGeHoHydoCln8ipEjq63_45DeUST0dGqSWVADySyHGppc-RNSO4oBfQDhcUtvC-TwTH0EBBB4YmM3u7ES0Z_ALoOp05xcQhRxumthnLPGUJyUYNIHlrNF",
+      "description": "Distilled in Grasse, poured by hand. Notes of sun-warmed fig, sandalwood, and desert oud crafted to leave an unforgettable imprint.",
+      "inStock": true,
+      "variants": [
+        {
+          "id": "50ml",
+          "name": "50ml",
+          "price": 2100
+        },
+        {
+          "id": "100ml-set",
+          "name": "100ml Set",
+          "price": 3450,
+          "isBestValue": true
+        },
+        {
+          "id": "discovery",
+          "name": "Discovery Set",
+          "price": 950
+        }
+      ],
+      "olfactory": {
+        "topLayer": "Bergamot & White Pear (0-30 mins)",
+        "heartAccord": "Sambac Jasmine & Rose Dew (2-6 hours)",
+        "baseResonance": "Cashmere Musk & Sandalwood (14+ hours)"
+      }
+    },
+    {
+      "id": "celestial-organza-lehenga",
+      "name": "Celestial Organza Lehenga",
+      "category": "women",
+      "categoryLabel": "Atelier Couture",
+      "subtitle": "Handwoven Zari & Organza Trim in Alabaster Rose",
+      "price": 8499,
+      "originalPrice": 11999,
+      "rating": 4.9,
+      "reviewsCount": 128,
+      "tag": "BESTSELLER",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBb7MsIb74_loLLR1vKVzQk9KmtHK0AA3H_A4cywuPmv-M1BXKwTmnIjLmdJ-VfsPA5_gGgACWPwZH-FW8Xciuc4blNuUqS6Ybe6PqhJFlg_4t25vya5wjX9fExxe4HO5cYpZKL0l5YAgeWIjN9A6i__EMUiY9f1M_QY-UpQOjrIg6ofmkDSBAn9haWfDLdXz07M66D_V2VyJTb0AGpLIq6bMaV88aw7d0mlXbBlZYaAMH2f5KR-rUV",
+      "description": "An ethereal blush pink and warm terracotta silk organza lehenga styled with delicate hand embroidery.",
+      "inStock": true
+    },
+    {
+      "id": "ethereal-chanderi-anarkali",
+      "name": "Ethereal Chanderi Silk Anarkali Set",
+      "category": "women",
+      "categoryLabel": "Atelier Couture",
+      "subtitle": "Handwoven Zari Trim with Fine Dupatta",
+      "price": 14950,
+      "originalPrice": 17500,
+      "rating": 5,
+      "reviewsCount": 28,
+      "tag": "NEW SEASON",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD-PYn6-85lnZrPRXxeGBWql0cIf0_vmKeLMGAEzKwia0lOqtxJjb2LDPbNPsRaXhgkbStbGc9pww47I5b0mc9O7uRTwOp-G4i1Yd09lZYZCGhcIllIDXDWBWWcfqNn_uJjTTkjoHfiDMyC-ofDVBg8r-kF1z8M4loy6QBHvFiwlNpjnqFnL1nW3BsJnRoN_QJnbiy-HEV2jZ0OLdWv0PqchAPo0tple6Vw-6dvyO342zqNTJyz2lST",
+      "description": "Modern Indian silhouette wearing an ethereal chanderi silk anarkali set with gold zari borders.",
+      "inStock": true
+    },
+    {
+      "id": "velvet-noir-parfum",
+      "name": "Velvet Noir Eau De Parfum (100ml)",
+      "category": "perfumes",
+      "categoryLabel": "Sensory Atelier",
+      "subtitle": "Smoked Vanilla & Amber Resonance",
+      "price": 6800,
+      "rating": 5,
+      "reviewsCount": 44,
+      "tag": "SIGNATURE",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDYbfHN7JIq1UPOc7uWa-wljZaRqOdvS4UR2ZrpMUVymynadihG-V0t1AnsZJh68_lPXRuAkukB3s4K8qFSqrXIEf63nmr2kOFzjDJe_QyPkEr7rGU2RhZCzvIIdsk9d0o42dUYPoqNOXESURC-NHX8Rt-7h6LkUIAtZCJLPdEpdaCTmcOUXFNRenECb0k-1BEVLh4TI-ohwRmw8XdNC0rZLxZ6iQq1vcmBsTRmerc_0CZ1cyeI8cC6",
+      "description": "Sleek amber perfume bottle titled Velvet Noir Eau De Parfum resting on raw terracotta stone.",
+      "inStock": true
+    },
+    {
+      "id": "rose-cut-kundan-bangles",
+      "name": "Rose-Cut Kundan Floral Bangles",
+      "category": "jewellery",
+      "categoryLabel": "Handcrafted Legacy",
+      "subtitle": "22k Gold Micron Plated Pair",
+      "price": 8490,
+      "originalPrice": 9900,
+      "rating": 4.5,
+      "reviewsCount": 19,
+      "tag": "LIMITED",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBfpY6qdNnKTxrTTaNLk6Uy2nGa1OYhwS9uTIzpFN07_OFPj6dUMy-rcJfJoIID7s052CmpNtLSu6FVe2GG6AFtKUtUH4_Qi27016ezceN8fYED3KEAUKLuxYIEWvtQbKwcHUdqFMDq_1nzRUDr7LVJbLqWZWeAKqbWgGzGW9IIb9JnJkWou1zbczX3DJHAVVYMB59a5h6nNY8BMkihPZKbw81ZODdIq3BtlZErV-u-KBqG01uEx6uA",
+      "description": "Intricate artisanal rose-cut kundan gold bangles adorned with delicate meenakari enamel floral details.",
+      "inStock": true
+    },
+    {
+      "id": "satin-wrap-cocktail-dress",
+      "name": "Satin Wrap Cocktail Dress",
+      "category": "women",
+      "categoryLabel": "Couture Lounge",
+      "subtitle": "Rich Terracotta Silk Satin",
+      "price": 11200,
+      "rating": 5,
+      "reviewsCount": 52,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAxoctNlrr1po6HPHZNJcnwrvUWIGAeNEiE2WxS_OOM89orKJFK6aiHv5Kl0jmB490Afvt69TjJuweLuqYB5RPTA3jV4PVyMHDj-e25WtYp4T3YwLCB2XMIhP2hRTF4ptebVg0JiMBDcPOZuTzY4XKuGEQN8s6tCLHmqAtf-X-7DNJGdtzgK_Kwh37fbfOybf6F3yKixT8tJ4uiwGlDVEnhdwjuEAFEYWwUj7iO8SZsOjI_86vTE2Ar",
+      "description": "Exquisite rust terracotta satin wrap cocktail dress in an Italian salon lounge with fluid silky textures.",
+      "inStock": true
+    },
+    {
+      "id": "gilded-stiletto-strappy-heels",
+      "name": "Gilded Stiletto Strappy Heels",
+      "category": "footwear",
+      "categoryLabel": "Footwear",
+      "subtitle": "85mm Italian Nappa Metallic Heel",
+      "price": 4150,
+      "rating": 4.7,
+      "reviewsCount": 62,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD_s-uS8kYi8cDd-_f-ukgSKxAZGbmQvn3R6aci0370lRiuGWmWGh0zJOcmwuSjZ8_X-cOa75IbW_rFUOjTfDgSqvlk0mXdp4i5nDNAqGKhHv_NLcH9eFPLdvURp3FqbR2zs9P2z9PhnKw7UoSDMN_QDNsp9AJrXW3q9PrL2j9s9Phc5fd47QaD7W4gYs9lmBiKnsVjFYVhbj7_CIECOdHs8FJ9gTwfPmDkP1ILe9nAX-IeoHsEr8gj",
+      "description": "A pair of metallic gilded rose-gold stiletto heels with minimalist delicate ankle straps.",
+      "inStock": true
+    },
+    {
+      "id": "meenakari-handcrafted-kada",
+      "name": "Meenakari Handcrafted Kada",
+      "category": "jewellery",
+      "categoryLabel": "Artisanal Accents",
+      "subtitle": "22k Gold Micron Plated",
+      "price": 2890,
+      "rating": 5,
+      "reviewsCount": 41,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9UYKncW4AT7PuUMWqtNl_TnXDWMEG0z0dfO2zjLoL2nPv_5RawrYiixiDp70i2vVllCArc3XKhtgnmLxFZsCMV5P_xMhEwjyIcpQzGP_2gzENmqFXEdHwNPfy1TOUVh9YVZlS5qv9BoYTKJ3q7Qbtfx2z0g-Xtnmv30pbOuh0AAfDb7UskuPvlmcw2_KL7vlIN4KZ1iNPkmYc9zKwy5g2gnrYwNMnlgLUEctRtsZ1BzYa56-4s8W2",
+      "description": "Ornate handcrafted gold bangle kada adorned with intricate Jaipur Meenakari enamel art.",
+      "inStock": true
+    },
+    {
+      "id": "matte-souffle-velvet-lipstick",
+      "name": "Matte Soufflé Velvet Lipstick",
+      "category": "makeup",
+      "categoryLabel": "Clean Cosmetics",
+      "subtitle": "Shade: Spiced Terracotta",
+      "price": 1250,
+      "rating": 4.6,
+      "reviewsCount": 210,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDD4J0PqEXsT-S05zMvNo3k2Z9sxeXzVtLQBCM4RYkL0TMeBK57_gfcJCeD0h_d3tVEGT2adP6OIG7r09uYFgGzmCuNB5OcC086eJOSCbDWPwZ7YbvVOkuiKu5j8vsnhq1nkO-w6Hz06_jSZk-yhwSFJUXiXDrrJdyPFxx-e2HhtTcvEIdeTYLKC8EUNU7Yjb5C7rPDqpxO4TfQPEbjO8uzHS3I4lrV0t7-RaVBvy8vuKuO5BFaYmR8",
+      "description": "Luxurious matte warm terracotta-nude lipstick tube with brushed rose-gold case.",
+      "inStock": true
+    },
+    {
+      "id": "emerald-solitaire-cocktail-ring",
+      "name": "Emerald Solitaire Cocktail Ring",
+      "category": "jewellery",
+      "categoryLabel": "Fine Jewelry",
+      "subtitle": "Vermeil Gold & Emerald",
+      "price": 3750,
+      "rating": 4.9,
+      "reviewsCount": 88,
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAr2szd4NBhN5hReuRz28GA4TuPAvGrvLM6DqvXUokyABCsnjxhR57jV_RQUuWF3CwPa_kkjPiDLKpkCGb_GdRBD8rIHxe8U0fDe6ptR0212k0X8uboITodhNRjNlgodM5iuSDp0lBXgNqkil1KFMt45TGdLhcuS3Z3gPqARLuDaBN2vsng2lds5kEB53hhc9lV_10zIZeTDbz_9WVmpGhYlC-dIoU9vwGSRCIkbtLaaoseA7Un7x6C",
+      "description": "Emerald-cut deep green simulated Colombian emerald ring set in modern four-prong champagne gold mount.",
+      "inStock": true
+    }
+  ],
+  "users": [
+    {
+      "id": "usr_priya",
+      "email": "priya.sharma@sanctuary.haven",
+      "passwordHash": "42c0eb6128719fe9dee157af21fa86ba888af28068b2513278ac46f53ea9c710",
+      "salt": "7faf08373b1db26de7b71dec6e6168b3",
+      "name": "Priya Sharma",
+      "membership": "Haven Elite Member",
+      "tier": "Rose Gold Tier",
+      "havenCoins": 1420
+    }
+  ],
+  "tokens": {
+    "token_priya_demo_session": "usr_priya",
+    "haven_token_3d35470105f7547c2d70923666a0133f5f8eab64e8bd197c": "usr_priya"
+  },
+  "carts": {
+    "usr_priya": {
+      "items": [
+        {
+          "id": "item_1",
+          "productId": "jasmine-blanc-extrait",
+          "quantity": 1,
+          "size": "100ml",
+          "color": "Standard",
+          "price": 3450
+        },
+        {
+          "id": "item_2",
+          "productId": "celestial-organza-lehenga",
+          "quantity": 1,
+          "size": "M",
+          "color": "Alabaster Rose",
+          "price": 8499
+        },
+        {
+          "id": "item_3",
+          "productId": "rose-cut-kundan-bangles",
+          "quantity": 1,
+          "size": "2.6",
+          "color": "Gold",
+          "price": 2890
+        },
+        {
+          "id": "item_1788880020065",
+          "productId": "velvet-noir-parfum",
+          "quantity": 2,
+          "size": "Standard",
+          "color": "Standard",
+          "price": 6800
+        }
+      ],
+      "appliedCoupon": "HAVEN10"
+    }
+  },
+  "coupons": {
+    "HAVEN10": {
+      "code": "HAVEN10",
+      "discountPercent": 10,
+      "description": "10% off entire curation"
+    },
+    "WELCOME10": {
+      "code": "WELCOME10",
+      "discountPercent": 10,
+      "description": "Welcome 10% privilege"
+    }
+  }
+}

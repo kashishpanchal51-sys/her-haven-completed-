@@ -1,0 +1,6 @@
+{
+  "name": "Her Haven — Luxury Boutique & Salon",
+  "description": "High-end Indian luxury fashion, fine fragrances, and handcrafted artisanal jewellery boutique with curated realms, olfactory architecture, bespoke bag, and personal sanctuary hub.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
